@@ -3,8 +3,7 @@
     position: relative;
     background-color: #036fab;
     color: white;
-    padding: 5px;
-    margin: 0px 0px 10px 0px;
+    margin: 0px 0px 5px 0px;
 }
 
 #bottom {
@@ -16,8 +15,7 @@
 
 #left {
     float: left;
-    background-color: #ece3a5;
-    padding: 5px;
+    background-color: #ece3a5;    
     width: 150px;
 }
 
