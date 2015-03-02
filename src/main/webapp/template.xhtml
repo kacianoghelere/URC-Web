@@ -16,37 +16,36 @@
     <h:body>
 
         <div id="top">
-            <h:form id="form-header">     
-                <p:toolbar style="font-size: 11px;  width: 100%">
-                    <f:facet name="left">                    
-                        <p:commandButton type="button" title="Home" value="URC" icon="ui-icon-home" />
 
-                        <span class="ui-separator">
-                            <span class="ui-icon ui-icon-grip-dotted-vertical" />
-                        </span>
+            <p:toolbar style="font-size: 11px;  width: 100%">
+                <f:facet name="left">                    
+                    <p:commandButton type="button" title="Home" value="URC" icon="ui-icon-home" />
 
-                        <p:commandButton type="button" title="Save" icon="ui-icon-disk" />
-                        <p:commandButton type="button" title="Process" icon="ui-icon-gear" />
-                        <p:commandButton type="button" title="Clear" icon="ui-icon-trash" />
-                        <p:commandButton type="button" title="Reload" icon="ui-icon-refresh" />    
-                    </f:facet>
+                    <span class="ui-separator">
+                        <span class="ui-icon ui-icon-grip-dotted-vertical" />
+                    </span>
 
-                    <f:facet name="right">
-                        <p:outputLabel value="Username" />
+                    <p:commandButton type="button" title="Save" icon="ui-icon-disk" actionListener="#{bean.onCommit()}"/>
+                    <p:commandButton type="button" title="Process" icon="ui-icon-gear" actionListener="#{bean.onProcess()}"/>
+                    <p:commandButton type="button" title="Clear" icon="ui-icon-trash" actionListener="#{bean.onClear()}"/>
+                    <p:commandButton type="button" title="Reload" icon="ui-icon-refresh" actionListener="#{bean.onLoad()}" />    
+                </f:facet>
 
-                        <span class="ui-separator">
-                            <span class="ui-icon ui-icon-grip-dotted-vertical" />
-                        </span>                        
+                <f:facet name="right">
+                    <p:outputLabel value="Username" />
 
-                        <p:commandButton type="button" title="Logoff" icon="ui-icon-power" />
-                    </f:facet>
-                </p:toolbar>
-            </h:form>
+                    <span class="ui-separator">
+                        <span class="ui-icon ui-icon-grip-dotted-vertical" />
+                    </span>                        
+
+                    <p:commandButton type="button" title="Logoff" icon="ui-icon-power" />
+                </f:facet>
+            </p:toolbar>
+
         </div>
-
-        <div id="left">
-            <h:form id="form-navbar">
-
+        
+        <h:form>     
+            <div id="left">
                 <p:growl id="messages" showDetail="true" />
 
                 <p:menu toggleable="true" style="font-size: 11px; width: 100%">
@@ -64,12 +63,13 @@
                         <p:menuitem value="Internal" outcome="index" icon="ui-icon-star"/>
                     </p:submenu>
                 </p:menu>
-            </h:form>
-        </div>
 
-        <div id="center" class="left_content">
-            <ui:insert name="content">Content</ui:insert>
-        </div>
+            </div>
+
+            <div id="center" class="left_content">
+                <ui:insert name="content">Content</ui:insert>
+            </div>
+        </h:form>    
     </h:body>
 
 </html>

@@ -13,8 +13,6 @@ import javax.faces.view.ViewScoped;
 @ViewScoped
 public class IndexBean implements Serializable, BackgroundBean {
 
-    
-
     /**
      * Creates a new instance of IndexBean
      */
@@ -23,22 +21,22 @@ public class IndexBean implements Serializable, BackgroundBean {
 
     @Override
     public void onCommit() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        LOG.info("INDEX:ONCOMMIT");
     }
 
     @Override
     public void onProcess() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        LOG.info("INDEX:ONPROCESS");
     }
 
     @Override
     public void onClear() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        LOG.info("INDEX:ONCLEAR");
     }
 
     @Override
     public void onLoad() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        LOG.info("INDEX:ONLOAD");
     }
 
 }
