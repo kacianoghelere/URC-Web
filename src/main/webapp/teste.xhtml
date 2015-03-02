@@ -4,15 +4,10 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <ui:composition template="./template.xhtml">
 
-        <ui:include src="./template.xhtml">
-            <ui:param name="bean" value="#{testeBean}" />    
-        </ui:include>
+        <ui:param name="title" value="TESTE" />
+        <ui:param name="bean" value="#{testeBean}" />    
 
-
-        <ui:define name="content">
-
-            content
-        </ui:define>
+        <ui:define name="content">content</ui:define>
 
     </ui:composition>
 </html>

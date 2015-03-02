@@ -7,9 +7,9 @@
 
     <ui:composition template="./template.xhtml">
 
-        <ui:include src="./template.xhtml">
-            <ui:param name="bean" value="#{indexBean}" />
-        </ui:include>
+
+        <ui:param name="bean" value="#{indexBean}" />
+        <ui:param name="title" value="INDEX" />
 
         <ui:define name="content">
             <p:fieldset legend="URC - Ultimate RPG Controller" style="margin-bottom:20px">

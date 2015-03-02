@@ -10,40 +10,40 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <h:outputStylesheet name="./css/default.css"/>
         <h:outputStylesheet name="./css/cssLayout.css"/>
-        <title>Facelets Template</title>
+        <title>#{title}</title>
     </h:head>
 
     <h:body>
+        <h:form>
+            <div id="top">
 
-        <div id="top">
+                <p:toolbar style="font-size: 11px;  width: 100%">
+                    <f:facet name="left">                    
+                        <p:commandButton type="button" title="Home" value="URC" icon="ui-icon-home" />
 
-            <p:toolbar style="font-size: 11px;  width: 100%">
-                <f:facet name="left">                    
-                    <p:commandButton type="button" title="Home" value="URC" icon="ui-icon-home" />
+                        <span class="ui-separator">
+                            <span class="ui-icon ui-icon-grip-dotted-vertical" />
+                        </span>
 
-                    <span class="ui-separator">
-                        <span class="ui-icon ui-icon-grip-dotted-vertical" />
-                    </span>
+                        <p:commandButton type="button" title="Save" icon="ui-icon-disk" actionListener="#{bean.onCommit()}"/>
+                        <p:commandButton type="button" title="Process" icon="ui-icon-gear" actionListener="#{bean.onProcess()}"/>
+                        <p:commandButton type="button" title="Clear" icon="ui-icon-trash" actionListener="#{bean.onClear()}"/>
+                        <p:commandButton type="button" title="Reload" icon="ui-icon-refresh" actionListener="#{bean.onLoad()}" />    
+                    </f:facet>
 
-                    <p:commandButton type="button" title="Save" icon="ui-icon-disk" actionListener="#{bean.onCommit()}"/>
-                    <p:commandButton type="button" title="Process" icon="ui-icon-gear" actionListener="#{bean.onProcess()}"/>
-                    <p:commandButton type="button" title="Clear" icon="ui-icon-trash" actionListener="#{bean.onClear()}"/>
-                    <p:commandButton type="button" title="Reload" icon="ui-icon-refresh" actionListener="#{bean.onLoad()}" />    
-                </f:facet>
+                    <f:facet name="right">
+                        <p:outputLabel value="Username" />
 
-                <f:facet name="right">
-                    <p:outputLabel value="Username" />
+                        <span class="ui-separator">
+                            <span class="ui-icon ui-icon-grip-dotted-vertical" />
+                        </span>                        
 
-                    <span class="ui-separator">
-                        <span class="ui-icon ui-icon-grip-dotted-vertical" />
-                    </span>                        
+                        <p:commandButton type="button" title="Logoff" icon="ui-icon-power" />
+                    </f:facet>
+                </p:toolbar>
 
-                    <p:commandButton type="button" title="Logoff" icon="ui-icon-power" />
-                </f:facet>
-            </p:toolbar>
-
-        </div>
-        
+            </div>
+        </h:form>  
         <h:form>     
             <div id="left">
                 <p:growl id="messages" showDetail="true" />
