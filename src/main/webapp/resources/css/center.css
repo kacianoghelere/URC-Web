@@ -1,0 +1,8 @@
+.content{
+    width: 400px;   
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin-left:-200px; /*Sempre metade do total do height*/
+    margin-top:-200px; /*Sempre metade do total width*/
+}
