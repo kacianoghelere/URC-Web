@@ -14,54 +14,60 @@
     </h:head>
 
     <h:body>
-        <h:form id="top">
-            <p:toolbar style="font-size: 11px;  width: 100%">
-                <p:toolbarGroup align="left">    
-
-                    <p:commandButton title="Home" value="URC" icon="ui-icon-home" />
-
-                    <span class="ui-separator">
-                        <span class="ui-icon ui-icon-grip-dotted-vertical" />
-                    </span>
-
-                    <p:commandButton title="Save" icon="ui-icon-disk" actionListener="#{bean.onCommit()}"/>
-                    <p:commandButton title="Process" icon="ui-icon-gear" actionListener="#{bean.onProcess()}"/>
-                    <p:commandButton title="Clear" icon="ui-icon-trash" actionListener="#{bean.onClear()}"/>
-                    <p:commandButton title="Reload" icon="ui-icon-refresh" actionListener="#{bean.onLoad()}" />  
-                </p:toolbarGroup>
-
-                <p:toolbarGroup align="right">  
-                    <p:outputLabel value="Username" />
-
-                    <span class="ui-separator">
-                        <span class="ui-icon ui-icon-grip-dotted-vertical" />
-                    </span>                        
-
-                    <p:commandButton title="Logoff" icon="ui-icon-power" />
-                </p:toolbarGroup>
-            </p:toolbar>
-        </h:form>  
-        <h:form id="left">
-            <p:growl id="messages" showDetail="true" />
-
-            <p:menu toggleable="true" style="font-size: 11px; width: 100%">
-                <p:submenu label="Menu I">
-                    <p:menuitem value="Save" update="messages" icon="ui-icon-disk" actionListener="#{bean.onCommit()}"/>
-                    <p:menuitem value="Update" update="messages" icon="ui-icon-arrowrefresh-1-w"/>
-                </p:submenu>
-
-                <p:submenu label="Menu II">
-                    <p:menuitem value="Delete" update="messages" ajax="false" icon="ui-icon-close"/>
-                </p:submenu>
-
-                <p:submenu label="Menu III" >
-                    <p:menuitem value="External" icon="ui-icon-home"/>
-                    <p:menuitem value="Internal" outcome="index" icon="ui-icon-star"/>
-                </p:submenu>
-            </p:menu>
 
 
-        </h:form>    
+        <div id="top">
+            <h:form id="form_top">
+                <p:toolbar style="font-size: 11px;  width: 100%">
+                    <p:toolbarGroup align="left">    
+
+                        <p:commandButton title="Home" value="URC" icon="ui-icon-home" />
+
+                        <span class="ui-separator">
+                            <span class="ui-icon ui-icon-grip-dotted-vertical" />
+                        </span>
+
+                        <p:commandButton title="Save" icon="ui-icon-disk" actionListener="#{bean.onCommit()}"/>
+                        <p:commandButton title="Process" icon="ui-icon-gear" actionListener="#{bean.onProcess()}"/>
+                        <p:commandButton title="Clear" icon="ui-icon-trash" actionListener="#{bean.onClear()}"/>
+                        <p:commandButton title="Reload" icon="ui-icon-refresh" actionListener="#{bean.onLoad()}" />  
+                    </p:toolbarGroup>
+
+                    <p:toolbarGroup align="right">  
+                        <p:outputLabel value="Username" />
+
+                        <span class="ui-separator">
+                            <span class="ui-icon ui-icon-grip-dotted-vertical" />
+                        </span>                        
+
+                        <p:commandButton title="Logoff" icon="ui-icon-power" />
+                    </p:toolbarGroup>
+                </p:toolbar>
+            </h:form>  
+        </div>
+
+        <div id="left">
+            <h:form id="form_left">
+                <p:growl id="messages" showDetail="true" />
+
+                <p:menu toggleable="true" style="font-size: 11px; width: 100%">
+                    <p:submenu label="Menu I">
+                        <p:menuitem value="Save" update="messages" icon="ui-icon-disk" actionListener="#{bean.onCommit()}"/>
+                        <p:menuitem value="Update" update="messages" icon="ui-icon-arrowrefresh-1-w"/>
+                    </p:submenu>
+
+                    <p:submenu label="Menu II">
+                        <p:menuitem value="Delete" update="messages" ajax="false" icon="ui-icon-close"/>
+                    </p:submenu>
+
+                    <p:submenu label="Menu III" >
+                        <p:menuitem value="External" icon="ui-icon-home"/>
+                        <p:menuitem value="Internal" outcome="index" icon="ui-icon-star"/>
+                    </p:submenu>
+                </p:menu>
+            </h:form>    
+        </div>
+
         <div id="center" class="left_content">
             <ui:insert name="content">Content</ui:insert>
         </div>
