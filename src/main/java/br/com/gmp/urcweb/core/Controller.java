@@ -1,5 +1,6 @@
 package br.com.gmp.urcweb.core;
 
+import br.com.gmp.urcweb.core.connection.ConnectionFactory;
 import br.com.gmp.urcweb.data.dao.DAO;
 import br.com.gmp.urcweb.entity.Menu;
 import java.util.List;
@@ -16,6 +17,7 @@ public interface Controller<T> {
      * Gerenciador de logs
      */
     public static final Logger LOGGER = Logger.getLogger(Controller.class.getName());
+    public ConnectionFactory factory = new ConnectionFactory();
 
     public void insert(T entity);
 

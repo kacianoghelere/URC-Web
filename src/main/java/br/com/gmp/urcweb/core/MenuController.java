@@ -23,12 +23,21 @@ public class MenuController implements Controller<Menu> {
 
     @Override
     public List<Menu> getList() {
-        return menuDao.getList();
+        try {
+            return menuDao.getList();
+        } catch (Exception ex) {
+            Logger.getLogger(MenuController.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
     }
 
     @Override
     public void insert(Menu entity) {
-        menuDao.insert(entity);
+        try {
+            menuDao.insert(entity);
+        } catch (Exception ex) {
+            Logger.getLogger(MenuController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
@@ -42,7 +51,11 @@ public class MenuController implements Controller<Menu> {
 
     @Override
     public void delete(Menu entity) {
-        menuDao.delete(entity);
+        try {
+            menuDao.delete(entity);
+        } catch (Exception ex) {
+            Logger.getLogger(MenuController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override

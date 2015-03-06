@@ -1,5 +1,6 @@
 package br.com.gmp.urcweb.data.dao;
 
+import java.sql.ResultSet;
 import java.util.List;
 
 /**
@@ -9,6 +10,15 @@ import java.util.List;
  * @param <T> Classe da Entidade
  */
 public interface DAO<T> {
+
+    /**
+     * Constroi a entidade
+     *
+     * @param rs {@code ResultSet} Resultado da busca
+     * @return Entidade construida
+     * @throws java.lang.Exception
+     */
+    T build(ResultSet rs) throws Exception;
 
     /**
      * Deleta a entidade
@@ -50,14 +60,6 @@ public interface DAO<T> {
     Object[] getArray() throws Exception;
 
     /**
-     * Retorna a classe do objeto que aplica o DAO
-     *
-     * @return {@code Class(?)} Classe do DAO
-     * @throws java.lang.Exception
-     */
-    Class<T> getObjClass() throws Exception;
-
-    /**
      * Insere a entidade no banco de dados
      *
      * @param entity {@code T} Entidade
@@ -89,14 +91,6 @@ public interface DAO<T> {
      * @throws java.lang.Exception
      */
     void replaceAll(List<T> entities) throws Exception;
-
-    /**
-     * Modifica a classe do objeto que aplica o DAO
-     *
-     * @param oClass {@code Class(?)} Classe do DAO
-     * @throws java.lang.Exception
-     */
-    void setObjClass(Class<T> oClass) throws Exception;
 
     /**
      * Atualiza a entidade
