@@ -18,8 +18,8 @@
                     <p:commandButton update="menuDetail" icon="ui-icon-search" 
                                      oncomplete="PF('menuDialog').show()"
                                      value="ID" /> 
-                    <p:inputText id="menu_id" value="#{menuRegisterBean.selected.idmenu}" disabled="true"/>
-
+                    <p:inputText id="menu_id" value="#{menuRegisterBean.selected.idmenu}" 
+                                 onblur="#{menuRegisterBean.perdeuFoco()}"/>
 
                     <p:outputLabel value="Titulo:" for="title" />
                     <p:inputText id="title" value="#{menuRegisterBean.selected.title}" />

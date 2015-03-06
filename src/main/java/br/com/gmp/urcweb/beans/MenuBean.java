@@ -53,4 +53,8 @@ public class MenuBean implements Serializable {
         this.selected = selected;
     }
 
+    public void perdeuFoco() {
+        LOGGER.info("PERDEU FOCO!");
+    }
+
 }
