@@ -27,5 +27,5 @@ public interface Controller<T> {
 
     public DAO<T> getDao();
 
-    public List<Menu> getList();
+    public List<T> getList();
 }
